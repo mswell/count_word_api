@@ -1,0 +1,4 @@
+SECRET_KEY=<your secret key here>
+DEBUG=<True or False>
+ALLOWED_HOSTS=<your hosts here>
+DATABASE_URL=<your database URL here>
