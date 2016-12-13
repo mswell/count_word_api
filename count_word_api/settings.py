@@ -93,22 +93,22 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': (
             'django.contrib.auth.password_validation.'
-            'UserAttributeSimilarityValidator',
+            'UserAttributeSimilarityValidator'
         )
     },
     {
         'NAME': (
-            'django.contrib.auth.password_validation.MinimumLengthValidator',
+            'django.contrib.auth.password_validation.MinimumLengthValidator'
         )
     },
     {
         'NAME': (
-            'django.contrib.auth.password_validation.CommonPasswordValidator',
+            'django.contrib.auth.password_validation.CommonPasswordValidator'
         )
     },
     {
         'NAME': (
-            'django.contrib.auth.password_validation.NumericPasswordValidator',
+            'django.contrib.auth.password_validation.NumericPasswordValidator'
         )
     },
 ]
@@ -130,5 +130,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
