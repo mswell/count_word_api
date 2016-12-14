@@ -1,6 +1,6 @@
 import pytest
 from django.contrib.auth.models import User
-from django.shortcuts import resolve_url
+from django.core.urlresolvers import reverse
 from mixer.backend.django import mixer
 from rest_framework import status
 from rest_framework.authtoken.models import Token
@@ -25,5 +25,8 @@ class TestCountWordView(object):
         return client
 
     def test_get_authorized_client(self, authorized_client):
-        resp = authorized_client.get(resolve_url('core:count_word'))
+        url = reverse('core:count_word',
+                      kwargs={'site': 'www.google.com'})
+        url += "?word=feijão"
+        resp = authorized_client.get(url)
         assert resp.status_code == status.HTTP_200_OK
