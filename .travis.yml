@@ -4,7 +4,8 @@ python:
   - "3.5"
 
 install:
-  - make install env=test
+  - make .env env=test
+  - pip install -r requirements/dev.txt
 
 script:
   - make test-travis
