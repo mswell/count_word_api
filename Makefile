@@ -49,6 +49,7 @@ test:  ## Run simple test
 
 test-travis: clean check check-debugger ## Test on travis CI
 	@py.test -n 2 count_word_api --ds=$(SETTINGS)
+	@py.test --cov-config .coveragerc --cov count_word_api count_word_api --ds=$(SETTINGS) --cov-report term-missing --cov-fail-under=90
 
 check:  ## Run code static checks
 	@flake8 .
@@ -56,3 +57,7 @@ check:  ## Run code static checks
 
 check-debugger: ## Check if has set_trace on files
 	@find count_word_api -type f -exec egrep -iH "set_trace" {} \+ && echo "Ooops! Found 1 set_trace on your source code!" && exit 1 ||     exit 0
+
+coverage: clean ## Basic test with coverage
+	@py.test --cov-config .coveragerc --cov count_word_api count_word_api --ds=$(SETTINGS) --cov-report term-missing --cov-fail-under=90
+
