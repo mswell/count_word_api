@@ -18,7 +18,13 @@ Activate your virtualenv:
 source .venv/bin/activate
 ```
 
-Run installation:
+Copy localenv file example to root directory of this project:
+
+```
+cp contrib/localenv .env
+```
+
+Now configure your .env file (use your preferred text editor), then run installation:
 
 ```
 make install
