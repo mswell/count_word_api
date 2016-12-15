@@ -79,7 +79,9 @@ The response will be similar to this below:
 {"senado": 4}
 ```
 
-This response represent 4 words found on site [http://www.uol.com.br](http://www.uol.com.br).
+This response represent 4 words found on site [http://www.uol.com.br](http://www.uol.com.br). 
+
+*IMPORTANT*: Any word or any url can be passed to url "http://www.uol.com.br" and the word "senado" are just examples of use.
 
 ## Error messages
 
