@@ -25,7 +25,7 @@ createsuperuser:  ## Create superuser for project
 requirements:  ## Install requirements for run project on development env
 	@pip install -r requirements/dev.txt
 
-install: .env requirements migrate createsuperuser ## Install local project
+install: .env requirements migrate ## Install local project
 
 # -- execution
 
