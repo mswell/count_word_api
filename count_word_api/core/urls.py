@@ -4,7 +4,7 @@ from .views import CountView
 
 
 urlpatterns = [
-    url(r'count/(?P<site>\S+)$',
+    url(r'count-word$',
         CountView.as_view(),
         name='count_word'),
 ]
