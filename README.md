@@ -6,6 +6,18 @@ API to count occurrences of one word on any site
 
 ## Instalation
 
+Clone this project:
+
+```
+git clone https://github.com/rafaelhenrique/count_word_api.git
+```
+
+Enter on directory:
+
+```
+cd count_word_api
+```
+
 Create virtualenv:
 
 ```
@@ -36,7 +48,7 @@ make install
 make run
 ```
 
-## Help
+## More commands/target on make
 
 ```
 make help
