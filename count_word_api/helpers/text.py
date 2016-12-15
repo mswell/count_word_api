@@ -9,6 +9,7 @@ def html_to_text(html_text):
 
 
 def remove_punctuation(text):
+    """Receive text and remove punctuation"""
     translate_table = {ord(c): ""
                        for c in "!@#$%^&*()[]{}';:,./<>?\|`~-=_+\""}
     return text.translate(translate_table)
