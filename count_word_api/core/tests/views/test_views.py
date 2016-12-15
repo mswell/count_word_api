@@ -41,3 +41,34 @@ class TestCountWordView(BaseTest):
         with self.vcr():
             resp = authorized_client.get(url)
         assert resp.json() == expected_content
+
+    def test_get_authorized_client_with_invalid_url(self, authorized_client):
+        expected_content = {"url": ["Entrar um URL válido."]}
+        url = reverse('core:count_word')
+        url += "?url=www.uol.com.br"
+        url += "&word=Senado"
+        resp = authorized_client.get(url)
+        assert resp.json() == expected_content
+
+    def test_get_authorized_client_with_not_found_paramethers(
+            self, authorized_client):
+        expected_content = {
+            "word": [
+                "Este campo não pode ser nulo."
+            ],
+            "url": [
+                "Este campo não pode ser nulo."
+            ]
+        }
+        url = reverse('core:count_word')
+        resp = authorized_client.get(url)
+        assert resp.json() == expected_content
+
+    def test_get_authorized_client_with_site_unavailable(
+            self, authorized_client):
+        expected_content = {"url": ["Site informado indisponível no momento"]}
+        url = reverse('core:count_word')
+        url += "?url=http://www.uol.com.brTESTE"
+        url += "&word=Senado"
+        resp = authorized_client.get(url)
+        assert resp.json() == expected_content
