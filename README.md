@@ -51,7 +51,8 @@ Now access url from your favorite browser:
 Do login and create an api user and api key. Now you call count word with curl like this:
 
 ```
-curl -X GET -H "Authorization: Token <YOUR API KEY HERE>" "http://localhost:8000/count-word?url=http://www.uol.com.br/&word=senado"
+curl -X GET -H "Authorization: Token <YOUR API KEY HERE>" \
+    "http://localhost:8000/count-word?url=http://www.uol.com.br/&word=senado"
 ```
 
 The response will be similar to this below:
